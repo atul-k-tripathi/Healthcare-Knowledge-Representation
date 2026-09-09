@@ -38,7 +38,7 @@ The study also motivates future work on hybrid approaches combining structured k
 
 ## Representation Paradigms
 
-The study compares seven representation paradigms:
+The study examines the following representation paradigms:
 
 1. Propositional Logic
 2. First-Order Predicate Logic (FOPL)
@@ -82,7 +82,9 @@ The study evaluates the representation paradigms across:
 - **Explainability**
 - **Scalability**
 
+Reasoning depth is further examined in the comparative analysis as a measure of the number of intermediate inference steps required to derive a conclusion.
 
+---
 
 ## Implementation
 
@@ -121,27 +123,27 @@ This becomes particularly relevant for questions requiring several interconnecte
 
 ## Benchmark Queries
 
-The five queries were designed to increase in reasoning complexity:
+The five queries were designed to increase in reasoning complexity.
 
 ### Q1 — Boolean
-Is a patient at risk of heart disease if chest pain is present
-and smoking history is negative?
+
+Is a patient at risk of heart disease if chest pain is present and smoking history is negative?
 
 ### Q2 — Universal
-Are all patients over 60 years old with hypertension at
-elevated risk of cardiovascular disease?
+
+Are all patients over 60 years old with hypertension at elevated risk of cardiovascular disease?
+
 ### Q3 — Relational
-What are the cardiovascular risks for patients with both
-diabetes and obesity?
+
+What are the cardiovascular risks for patients with both diabetes and obesity?
 
 ### Q4 — Multi-relational
-Which treatment guidelines are applicable for
-diabetic patients with left ventricular hypertrophy and a history of atrial
-fibrillation?
+
+Which treatment guidelines are applicable for diabetic patients with left ventricular hypertrophy and a history of atrial fibrillation?
 
 ### Q5 — Contextual
-Suggest interventions for patients with comorbidities
-similar to those reported in recent literature.
+
+Suggest interventions for patients with comorbidities similar to those reported in recent literature.
 
 The complete benchmark formulations are documented in [`queries/benchmark_queries.md`](queries/benchmark_queries.md).
 
