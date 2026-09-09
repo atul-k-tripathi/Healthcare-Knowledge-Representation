@@ -261,27 +261,18 @@ Where reproducible examples are required, use only synthetic, appropriately anon
 
 ---
 
-## Repository Structure
-
-```text
 healthcare-knowledge-representation/
+│
 ├── README.md
 ├── CITATION.cff
-├── LICENSE
 ├── .gitignore
+│
+├── queries/
+│   └── benchmark_queries.md
+│
 ├── docs/
 │   ├── methodology.md
 │   └── limitations.md
-├── queries/
-│   └── benchmark_queries.md
-├── data/
-│   └── README.md
-├── src/
-│   ├── propositional/
-│   ├── rule_based/
-│   ├── relational/
-│   ├── frames/
-│   ├── ontology/
-│   └── knowledge_graph/
-├── results/
-└── figures/
+│
+└── data/
+    └── README.md
