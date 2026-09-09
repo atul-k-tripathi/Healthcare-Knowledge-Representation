@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use or reference this repository, please cite the associated research publication."
+title: "Healthcare Knowledge Representation: Comparative Evaluation of Knowledge-Representation Paradigms for Healthcare Question Answering"
+
+authors:
+  - family-names: "Tripathi"
+    given-names: "Atul Kumar"
+    orcid: "https://orcid.org/0009-0002-6273-5785"
+  - family-names: "Thakre"
+    given-names: "Puja Minodji"
+  - family-names: "Chatterjee"
+    given-names: "Niladri"
+
+keywords:
+  - "Knowledge Representation"
+  - "Knowledge Graphs"
+  - "Healthcare Question Answering"
+  - "Symbolic AI"
+  - "Semantic Web"
+  - "Explainable AI"
+
+preferred-citation:
+  type: conference-paper
+  title: "Knowledge Representation for Healthcare Systems: A Comparative Analysis of Performance of Different Representation Paradigms"
+  authors:
+    - family-names: "Tripathi"
+      given-names: "Atul Kumar"
+    - family-names: "Thakre"
+      given-names: "Puja Minodji"
+    - family-names: "Chatterjee"
+      given-names: "Niladri"
+  year: 2026
+  publisher: "Springer"
+  booktitle: "Intelligent Computing: Proceedings of the 2026 Computing Conference"
+  start: 38
+  end: 54
+  doi: "10.1007/978-3-032-24807-7_4"
