@@ -259,20 +259,18 @@ No identifiable, confidential, restricted, or otherwise sensitive healthcare inf
 
 Where reproducible examples are required, use only synthetic, appropriately anonymized, or legally shareable data.
 
----
+## Repository Structure
 
+```text
 healthcare-knowledge-representation/
-│
 ├── README.md
 ├── CITATION.cff
+├── LICENSE
 ├── .gitignore
-│
-├── queries/
-│   └── benchmark_queries.md
-│
 ├── docs/
 │   ├── methodology.md
 │   └── limitations.md
-│
-└── data/
-    └── README.md
+├── queries/
+│   └── benchmark_queries.md
+├── data/
+│   └── README.md
