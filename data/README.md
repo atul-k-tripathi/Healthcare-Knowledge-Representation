@@ -2,20 +2,18 @@
 
 ## Dataset Availability
 
-The research study uses a curated dataset of 47 anonymized cardiovascular patient records.
+The published study uses a curated dataset of **47 anonymized cardiovascular patient records**.
 
-The original patient-level dataset is **not distributed in this repository**.
+The original patient-level research dataset is **not distributed in this repository**.
 
 ## Privacy and Research Ethics
 
-No identifiable, confidential, restricted or otherwise sensitive healthcare information should be committed to this repository.
+No patient-level, identifiable, confidential, or otherwise restricted healthcare information is included in this repository.
 
 ## Reproducibility
 
-Where reproducible examples are required, use only:
+Because the original research dataset is not publicly distributed, this repository does not provide patient-level data for reproducing the reported experiments.
 
-- synthetic data,
-- appropriately anonymized data, or
-- data that is legally and ethically shareable.
+The repository instead provides the study description, benchmark formulations, published comparative results, and supporting documentation necessary to understand the experimental framework.
 
-Any publicly released dataset should include clear documentation of its provenance, licensing and permitted use.
+Any future public release of data associated with this research should include appropriate documentation of data provenance, licensing, permitted use, and ethical or legal restrictions.
