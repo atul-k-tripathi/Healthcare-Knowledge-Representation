@@ -6,25 +6,46 @@ This repository accompanies the published research work:
 
 > **Knowledge Representation for Healthcare Systems: A Comparative Analysis of Performance of Different Representation Paradigms**
 
-The study develops a unified computational framework for comparing knowledge-representation paradigms in healthcare Question Answering Systems (QAS), with emphasis on reasoning capability, query coverage, explainability, semantic expressiveness, and scalability.
+The study develops a unified computational framework for comparing knowledge-representation (KR) paradigms in healthcare Question Answering Systems (QAS), with emphasis on representational expressiveness, query coverage, reasoning depth, explainability, and scalability.
+
+**Authors:** Atul Kumar Tripathi, Puja Minodji Thakre, and Niladri Chatterjee
+
+**Publication:** Springer, *Intelligent Computing: Proceedings of the 2026 Computing Conference*
+
+**DOI:** [10.1007/978-3-032-24807-7_4](https://doi.org/10.1007/978-3-032-24807-7_4)
 
 ---
 
 ## Research Question
 
-**How does the choice of knowledge-representation technique influence the reasoning performance and answer quality of expert systems in the healthcare domain?**
+> **How does the choice of knowledge representation technique influence the reasoning performance and answer quality of expert systems in the healthcare domain?**
 
-The study addresses this question by implementing lightweight expert-system prototypes using semantically aligned clinical knowledge and evaluating them with benchmark queries of progressively increasing complexity.
+To investigate this question, the study implements lightweight expert-system prototypes using multiple knowledge-representation paradigms and evaluates them against a common set of progressively complex clinical queries.
+
+---
+
+## Study at a Glance
+
+| Component | Description |
+|---|---|
+| Domain | Cardiovascular healthcare |
+| Dataset | 47 curated, anonymized patient records |
+| Benchmark | 5 clinical queries (Q1–Q5) |
+| KR paradigms | Propositional Logic, FOPL, Rule-Based Systems, Relational Databases, Frames, Ontologies, Knowledge Graphs |
+| Evaluation | Semantic expressiveness, query coverage, reasoning depth, explainability, scalability |
+| Main result | Knowledge Graphs achieved full coverage of the five benchmark queries |
+
+The underlying clinical knowledge was kept semantically aligned across the representation paradigms to reduce bias caused by differences in the knowledge being represented. :contentReference[oaicite:5]{index=5}
 
 ---
 
 ## Research Context
 
-Healthcare question answering requires systems to represent relationships between entities, reason across increasingly complex clinical conditions, integrate context, and provide interpretable evidence for their answers.
+Healthcare question answering requires systems to represent relationships between entities, reason across multiple clinical attributes, incorporate contextual information, and provide interpretable reasoning.
 
-This study therefore compares classical and graph-based knowledge-representation paradigms under a common evaluation setting.
+The study therefore compares classical and graph-based KR approaches under a common evaluation setting, progressing from simple Boolean reasoning to relational, multi-relational, and contextual queries.
 
-The work is situated at the intersection of:
+The work sits at the intersection of:
 
 - Knowledge Representation
 - Knowledge Graphs
@@ -32,120 +53,120 @@ The work is situated at the intersection of:
 - Healthcare Question Answering
 - Semantic Modelling
 
-The study also motivates future work on hybrid approaches combining structured knowledge with modern AI systems.
+---
+
+## Knowledge-Representation Paradigms
+
+The study examines seven representation paradigms:
+
+1. **Propositional Logic**
+2. **First-Order Predicate Logic (FOPL)**
+3. **Rule-Based Systems**
+4. **Relational Databases**
+5. **Frame-Based Models**
+6. **Ontologies**
+7. **Knowledge Graphs**
+
+The study describes each paradigm as a lightweight expert-system prototype consisting of a knowledge base and an inference mechanism. :contentReference[oaicite:6]{index=6}
+
+### Note on FOPL
+
+FOPL is discussed and implemented as part of the study. However, the published comparative Table 1 does not report FOPL as a separate row. The repository preserves this distinction rather than presenting a reconstructed FOPL result as an independently reported published result. :contentReference[oaicite:7]{index=7}
 
 ---
 
-## Representation Paradigms
+## Benchmark Design
 
-The study examines the following representation paradigms:
-
-1. Propositional Logic
-2. First-Order Predicate Logic (FOPL)
-3. Rule-Based Systems
-4. Relational Databases
-5. Frame-Based Models
-6. Ontologies
-7. Knowledge Graphs
-
-The paradigms are evaluated using semantically aligned clinical knowledge to reduce bias arising from differences in the underlying knowledge being represented.
-
----
-
-## Benchmark
-
-**Domain:** Cardiovascular healthcare
-
-**Dataset:** 47 curated anonymized patient records
-
+**Domain:** Cardiovascular healthcare  
+**Dataset:** 47 curated, anonymized patient records  
 **Benchmark queries:** 5
 
-The five queries progressively increase in reasoning complexity:
+The benchmark was designed to increase in reasoning complexity from Boolean conditions to relational and contextual reasoning. :contentReference[oaicite:8]{index=8}
 
 | Query | Reasoning type | Focus |
 |---|---|---|
-| Q1 | Boolean | Condition-based cardiovascular risk |
-| Q2 | Universal | Quantified reasoning over patients |
-| Q3 | Relational | Interacting clinical attributes |
+| Q1 | Boolean | Chest pain and smoking history |
+| Q2 | Universal | Age, hypertension, and cardiovascular risk |
+| Q3 | Relational | Diabetes, obesity, and cardiovascular risk |
 | Q4 | Multi-relational | Comorbidities and treatment guidelines |
-| Q5 | Contextual | Context-aware reasoning using related clinical knowledge |
+| Q5 | Contextual | Interventions informed by related clinical evidence |
 
----
-
-## Evaluation Framework
-
-The study evaluates the representation paradigms across:
-
-- **Semantic expressiveness**
-- **Query coverage**
-- **Reasoning depth**
-- **Explainability**
-- **Scalability**
-
-Reasoning depth is further examined in the comparative analysis as a measure of the number of intermediate inference steps required to derive a conclusion.
-
----
-
-## Implementation
-
-The study describes lightweight expert-system prototypes using open-source computational tools.
-
-| Representation Paradigm | Implementation |
-|---|---|
-| Propositional Logic | Python |
-| Rule-Based Systems | Python |
-| First-Order Predicate Logic | SQLite-based relational queries |
-| Relational representation | SQL-based structured queries |
-| Frame-Based Models | JSON slot–filler structures |
-| Ontologies | RDF/OWL, RDFLib, OWL-RL |
-| Knowledge Graphs | RDF triple stores and SPARQL |
-
-All implementations share a common schema aligned with the cardiovascular domain.
-
-> **Repository principle:** public source code should consist only of verified research code actually used in the study, or clearly labelled and verified reconstruction code. The repository should never imply that newly reconstructed code is the original experimental implementation unless this is known to be true.
-
----
-
-## Knowledge Graph Component
-
-The Knowledge Graph representation models entities and relations as a connected graph and supports RDF-based representation and SPARQL querying.
-
-The study examines its ability to support:
-
-- multi-hop reasoning
-- contextual integration
-- semantic integration
-- path-based explanations
-
-This becomes particularly relevant for questions requiring several interconnected relations across patients, conditions, treatment guidelines, and related evidence.
+The complete benchmark formulations are documented in [`queries/benchmark_queries.md`](queries/benchmark_queries.md).
 
 ---
 
 ## Benchmark Queries
 
-The five queries were designed to increase in reasoning complexity.
-
 ### Q1 — Boolean
 
-Is a patient at risk of heart disease if chest pain is present and smoking history is negative?
+> Is a patient at risk of heart disease if chest pain is present and smoking history is negative?
 
 ### Q2 — Universal
 
-Are all patients over 60 years old with hypertension at elevated risk of cardiovascular disease?
+> Are all patients over 60 years old with hypertension at elevated risk of cardiovascular disease?
 
 ### Q3 — Relational
 
-What are the cardiovascular risks for patients with both diabetes and obesity?
+> What are the cardiovascular risks for patients with both diabetes and obesity?
 
 ### Q4 — Multi-relational
 
-Which treatment guidelines are applicable for diabetic patients with left ventricular hypertrophy and a history of atrial fibrillation?
+> Which treatment guidelines are applicable for diabetic patients with left ventricular hypertrophy and a history of atrial fibrillation?
 
 ### Q5 — Contextual
 
-Suggest interventions for patients with comorbidities similar to those reported in recent literature.
+> Suggest interventions for patients with comorbidities similar to those reported in recent literature.
 
-The complete benchmark formulations are documented in [`queries/benchmark_queries.md`](queries/benchmark_queries.md).
+These formulations are taken from the published benchmark design. :contentReference[oaicite:9]{index=9}
+
+**Note:** These are research benchmark formulations and are not intended to provide clinical advice.
+
+---
+
+## Evaluation Framework
+
+The study considers five dimensions:
+
+- **Semantic expressiveness** — ability to represent hierarchical and contextual knowledge
+- **Query coverage** — number of benchmark queries successfully addressed
+- **Reasoning depth** — number of intermediate inference steps required to derive an answer
+- **Explainability** — availability of transparent reasoning traces
+- **Scalability** — ability to extend the approach to larger datasets and more complex reasoning tasks
+
+The published comparative table is a qualitative assessment of query coverage, explainability, and reasoning depth. Semantic expressiveness and scalability are additionally discussed as broader evaluation considerations. :contentReference[oaicite:10]{index=10}
+
+---
+
+## Implementation
+
+The study describes lightweight prototypes implemented using open-source computational tools.
+
+| Representation Paradigm | Implementation |
+|---|---|
+| Propositional Logic | Python |
+| First-Order Predicate Logic | SQLite-based relational queries |
+| Rule-Based Systems | Python |
+| Relational Databases | SQL-based structured queries |
+| Frame-Based Models | JSON slot–filler structures |
+| Ontologies | RDF/OWL using RDFLib and OWL-RL |
+| Knowledge Graphs | RDF triple stores and SPARQL |
+
+All implementations share a common schema aligned with the cardiovascular domain. :contentReference[oaicite:11]{index=11}
+
+---
+
+## Knowledge Graph Component
+
+The Knowledge Graph representation models clinical entities and relationships using graph-structured knowledge.
+
+The study examines its ability to support:
+
+- multi-hop reasoning
+- semantic integration
+- contextual reasoning
+- path-based explanation
+
+In the benchmark, these capabilities become especially relevant for the more complex and context-sensitive queries.
 
 ---
 
@@ -162,115 +183,104 @@ The published comparative results are summarized below.
 | Ontology (OWL) | ✓ | ✓ | ✓ | ✓ | – | Inferred triples via SPARQL | 1–2 |
 | Knowledge Graph | ✓ | ✓ | ✓ | ✓ | ✓ | Path-based traces with multi-hop reasoning | 3 |
 
+The table above is a transcription of the qualitative comparison reported in the published study. :contentReference[oaicite:12]{index=12}
+
 ### Main Finding
 
-**Knowledge Graphs were the only evaluated paradigm to achieve full coverage of all five benchmark queries.**
+**Knowledge Graphs were the only paradigm in the published comparison to achieve full coverage of all five benchmark queries.**
 
-The study reports that Knowledge Graphs additionally supported:
-
-- multi-hop reasoning
-- contextual integration
-- path-based explainability
-
-The results also illustrate the trade-off between greater representational expressiveness and the additional computational and verification effort required for more complex reasoning.
+The study associates this broader coverage with multi-hop reasoning, contextual integration, and path-based explainability. At the same time, the paper notes that greater representational expressiveness introduces additional computational overhead, deeper reasoning paths, and greater verification effort. :contentReference[oaicite:13]{index=13}
 
 ---
 
-## Explainability
+## Study Contributions
 
-A central consideration of the study is that reasoning in healthcare should remain inspectable.
+The work contributes:
 
-The comparison therefore considers explicit reasoning traces, including:
+1. **A unified evaluation framework** for comparing multiple KR paradigms under a common set of progressively complex clinical queries.
 
-- rule-based inference traces
-- relational query outputs
-- inferred ontology relationships
-- graph-based reasoning paths
+2. **An empirical comparative analysis** of the reasoning boundaries of classical and graph-based representation approaches.
 
-Knowledge Graphs provide path-based explanations that expose intermediate relations contributing to an answer.
-
----
-
-## Research Contributions
-
-The work contributes three main elements:
-
-### 1. Unified Evaluation Framework
-
-A common framework for comparing multiple knowledge-representation paradigms under progressively complex clinical queries.
-
-### 2. Empirical Comparison
-
-A benchmark-based comparison that identifies the reasoning boundaries of classical and graph-based representation paradigms.
-
-### 3. Knowledge-Graph-Centric Perspective
-
-An empirical basis for considering Knowledge Graphs as a strong foundation for complex, context-sensitive, and explainable healthcare question answering.
+3. **A Knowledge-Graph-oriented perspective** on complex, multi-relational, and context-sensitive healthcare question answering. :contentReference[oaicite:14]{index=14}
 
 ---
 
 ## Limitations
 
-The study explicitly identifies several limitations.
+The study identifies several important limitations:
 
-### Dataset Size
+- **Dataset size:** The evaluation uses 47 curated patient records, limiting generalizability.
+- **Simulation of logical paradigms:** Propositional Logic and FOPL reasoning were implemented through Python conditionals and SQL queries rather than dedicated logic engines.
+- **Manual knowledge curation:** Subclass relationships in the ontology and Knowledge Graph were manually curated, which may introduce representational bias.
 
-The benchmark contains 47 curated patient records, which limits the generalizability of the empirical findings.
-
-### Simulation of Classical Reasoning
-
-Propositional Logic and FOPL were simulated using Python conditionals and SQL queries rather than dedicated logic engines.
-
-### Manual Knowledge Curation
-
-Subclass relationships in the ontology and Knowledge Graph were manually curated, which may introduce representational bias.
-
-These limitations are important when interpreting the comparative results and motivate further research.
+These limitations are explicitly acknowledged in the published work. :contentReference[oaicite:15]{index=15}
 
 ---
 
-## Future Research Directions
+## Future Research
 
-The paper identifies several directions for further investigation:
+The study identifies several directions for further work:
 
-- larger clinical datasets
+- evaluation on larger clinical datasets
 - automated ontology alignment
 - automated Knowledge Graph construction
 - scalable knowledge integration
 - hybrid neuro-symbolic reasoning
 - integration of Knowledge Graphs with language-based AI systems
-- improved validation and explanation of reasoning paths
 
-These directions motivate a broader research trajectory at the intersection of:
+These directions extend the current benchmark toward larger-scale, more dynamic, and more integrated knowledge-based systems. :contentReference[oaicite:16]{index=16}
 
-**Knowledge Graphs × AI/ML × Statistics × Data Science × Explainable Reasoning**
+---
 
-This repository presents the current work as a foundation for that broader research direction rather than claiming that these future methods have already been implemented.
+## Code Provenance and Reproducibility
+
+This repository contains a **cleaned and reconciled public implementation** of the computational framework described in the published study.
+
+Where the original research-development code was incomplete, inconsistent with the final manuscript, or dependent on non-public data, the corresponding components have been reconstructed and are explicitly documented as such.
+
+The repository therefore **does not claim that every public implementation file is a byte-for-byte copy of the original experimental notebook**.
+
+The included synthetic example dataset is provided for software validation and demonstration only. It is not the original research dataset and should not be interpreted as reproducing the published experimental data.
+
+The published comparison table is preserved separately from runtime demonstration outputs.
+
+See:
+
+- [`docs/reconciliation.md`](docs/reconciliation.md)
+- [`docs/reproducibility.md`](docs/reproducibility.md)
+- [`docs/limitations.md`](docs/limitations.md)
 
 ---
 
 ## Data Availability and Research Ethics
 
-The study used 47 curated anonymized cardiovascular patient records.
+The study used 47 curated, anonymized cardiovascular patient records.
 
 The original patient-level research dataset is **not distributed in this repository**.
 
-No identifiable, confidential, restricted, or otherwise sensitive healthcare information should be committed here.
+For reproducibility and demonstration, the repository includes only synthetic example data. No identifiable or confidential healthcare information is included.
 
-Where reproducible examples are required, use only synthetic, appropriately anonymized, or legally shareable data.
+---
 
 ## Repository Structure
 
 ```text
+
 healthcare-knowledge-representation/
 ├── README.md
 ├── CITATION.cff
-├── LICENSE
 ├── .gitignore
+│
 ├── docs/
-│   ├── methodology.md
+│   ├── reconciliation.md
 │   └── limitations.md
+│
 ├── queries/
 │   └── benchmark_queries.md
-├── data/
-│   └── README.md
+│
+├── results/
+│   ├── README.md
+│   └── published_comparison.csv
+│
+└── data/
+    └── README.md
