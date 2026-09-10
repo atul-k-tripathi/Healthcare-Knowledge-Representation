@@ -254,22 +254,20 @@ The repository does not claim that it provides the complete original experimenta
 
 ## Repository Structure
 
+
+
 ```text
 healthcare-knowledge-representation/
 ├── README.md
 ├── CITATION.cff
 ├── .gitignore
 │
-├── docs/
-│   ├── reconciliation.md
-│   └── limitations.md
-│
-├── queries/
-│   └── benchmark_queries.md
-│
 ├── data/
 │   └── README.md
 │
-└── results/
-    ├── README.md
-    └── published_comparison.csv
+├── docs/
+│   ├── methodology.md
+│   └── limitations.md
+│
+└── queries/
+    └── benchmark_queries.md
