@@ -2,9 +2,9 @@
 
 ## Overview
 
-The study develops a unified computational framework for comparing knowledge-representation paradigms for healthcare Question Answering Systems.
+The study develops a unified computational framework for comparing knowledge-representation (KR) paradigms for healthcare Question Answering Systems (QAS).
 
-To support a fair comparison, the evaluated paradigms are instantiated using semantically aligned clinical knowledge and assessed using the same progressively complex benchmark queries.
+To support a fair comparison, the evaluated paradigms are instantiated using semantically aligned clinical knowledge and assessed using a common set of progressively complex benchmark queries.
 
 ---
 
@@ -12,21 +12,25 @@ To support a fair comparison, the evaluated paradigms are instantiated using sem
 
 ### Domain
 
-Cardiovascular healthcare.
+The study focuses on cardiovascular healthcare.
 
 ### Dataset
 
-The study uses a curated dataset of 47 anonymized patient records containing structured clinical attributes such as age, gender, chest pain and selected comorbidities.
+The study uses a curated dataset of **47 anonymized cardiovascular patient records** containing structured clinical attributes such as age, gender, chest pain, smoking history, and selected comorbidities.
+
+The original patient-level research dataset is not publicly distributed in this repository.
 
 ### Benchmark
 
-Five clinical queries (Q1–Q5) are used to progressively increase reasoning complexity.
+Five clinical queries, **Q1–Q5**, are used to progressively increase the reasoning complexity of the benchmark.
+
+The queries range from Boolean and universal conditions to relational, multi-relational, and contextual reasoning.
 
 ---
 
 ## Representation Paradigms
 
-The study discusses and evaluates:
+The study considers the following knowledge-representation paradigms:
 
 - Propositional Logic
 - First-Order Predicate Logic (FOPL)
@@ -36,79 +40,100 @@ The study discusses and evaluates:
 - Ontologies
 - Knowledge Graphs
 
+The paradigms are evaluated using a common clinical knowledge schema to support comparison across representation approaches.
+
 ---
 
 ## Implementation
 
-The paper describes lightweight expert-system prototypes using open-source computational tools:
+The study describes lightweight expert-system prototypes implemented using open-source computational approaches.
 
 | Representation | Implementation |
 |---|---|
 | Propositional Logic | Python |
-| Rule-Based Systems | Python |
 | First-Order Predicate Logic | SQLite-based relational queries |
+| Rule-Based Systems | Python |
+| Relational Databases | SQL-based structured queries |
 | Frame-Based Models | JSON slot–filler structures |
-| Ontologies | RDF/OWL, RDFLib, OWL-RL |
+| Ontologies | RDF/OWL using RDFLib and OWL-RL |
 | Knowledge Graphs | RDF triple stores and SPARQL |
 
-The implementations share a common schema aligned with the cardiovascular domain.
+The implementations use a common schema aligned with the cardiovascular healthcare domain. :contentReference[oaicite:1]{index=1}
+
+### Note on FOPL
+
+FOPL is included in the methodology and implementation described in the study. However, the published comparative table does not report FOPL as a separate row. This distinction is preserved when presenting the published results.
 
 ---
 
 ## Evaluation Dimensions
 
-The framework considers:
+The framework evaluates the representation paradigms across four primary dimensions:
 
-- Semantic expressiveness
-- Query coverage
-- Explainability
-- Scalability
+- **Semantic expressiveness** — ability to represent hierarchical, relational, and contextual knowledge
+- **Query coverage** — ability to address the benchmark queries
+- **Explainability** — transparency of the reasoning process and derived answers
+- **Scalability** — suitability for larger datasets and increasingly complex reasoning tasks
 
-Reasoning depth is additionally analyzed as a measure of inferential complexity.
+**Reasoning depth** is additionally analyzed as a measure of inferential complexity.
+
+The published comparison specifically reports query coverage, explainability, and reasoning depth, while semantic expressiveness and scalability are considered as broader evaluation dimensions. :contentReference[oaicite:2]{index=2}
 
 ---
 
 ## Reasoning Depth
 
-For a query \(q\), reasoning depth is defined in terms of the shortest valid reasoning path:
+For a query \(q\), reasoning depth is defined as the length of the shortest valid reasoning path supporting the answer.
 
-\[
-RD(q)=\min_{p\in P(q)} |p|
-\]
+$$
+RD(q) = \min_{p \in P(q)} |p|
+$$
 
 where:
 
-- \(P(q)\) is the set of valid reasoning paths supporting the answer
-- \(|p|\) is the length of a reasoning path
+- \(P(q)\) denotes the set of valid reasoning paths supporting the answer to query \(q\).
+- \(|p|\) denotes the length of a reasoning path \(p\).
 
-In graph-based reasoning, deeper paths correspond to more intermediate inference steps.
+A lower reasoning depth represents shallower reasoning or direct retrieval, whereas a higher reasoning depth indicates a greater number of intermediate inference steps.
+
+For graph-based reasoning, reasoning depth corresponds to the length of the shortest valid inference path connecting the relevant entities.
+
+For example, the path
+
+$$
+A \rightarrow B \rightarrow C \rightarrow D
+$$
+
+contains three inference links and therefore has a reasoning depth of \(3\).
 
 ---
 
 ## Comparative Evaluation
 
-The benchmark is used to identify how the representational paradigm affects:
+The benchmark is used to examine how the choice of representation affects:
 
-- the complexity of queries that can be answered,
+- the complexity of queries that can be addressed,
 - reasoning depth,
 - explainability,
 - semantic integration, and
-- the ability to support multi-relational and contextual reasoning.
+- support for multi-relational and contextual reasoning.
 
-The published results show progressively increasing query coverage from classical representations toward Knowledge Graphs, with Knowledge Graphs covering all five benchmark queries.
+The published comparison shows progressively broader query coverage across the representation paradigms, with Knowledge Graphs achieving coverage of all five benchmark queries. :contentReference[oaicite:3]{index=3}
 
 ---
 
 ## Knowledge Graph Reasoning
 
-Knowledge Graphs are represented using graph-structured entities and relations.
+Knowledge Graphs represent clinical entities and relationships as interconnected graph structures.
 
-The implementation described in the paper uses RDF-based representation and SPARQL querying and supports multi-hop reasoning and path-based explanations.
+The implementation described in the study uses RDF-based representation and SPARQL querying. The graph representation supports multi-hop reasoning, semantic integration, contextual reasoning, and path-based explanations.
+
+These capabilities are particularly relevant to queries requiring multiple interconnected relations across patients, clinical conditions, treatment guidelines, and related evidence. :contentReference[oaicite:4]{index=4}
 
 ---
 
-## Reproducibility Note
+## Methodological Scope
 
-This repository should contain only verified source code and research materials that were actually used in the study, or clearly labelled and independently verified reconstructions.
+The framework is intended as a comparative research evaluation of knowledge-representation approaches for healthcare question answering.
 
-The repository should never imply that a newly reconstructed implementation is the original experimental implementation unless that fact has been established.
+The findings should be interpreted within the scope of the benchmark, dataset, implementation choices, and limitations described in the published study. The evaluation does not constitute a clinical validation study or a deployment-ready clinical decision-support system.
