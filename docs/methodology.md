@@ -58,7 +58,7 @@ The study describes lightweight expert-system prototypes implemented using open-
 | Ontologies | RDF/OWL using RDFLib and OWL-RL |
 | Knowledge Graphs | RDF triple stores and SPARQL |
 
-The implementations use a common schema aligned with the cardiovascular healthcare domain. :contentReference[oaicite:1]{index=1}
+The implementations use a common schema aligned with the cardiovascular healthcare domain.
 
 ### Note on FOPL
 
@@ -76,8 +76,6 @@ The framework evaluates the representation paradigms across four primary dimensi
 - **Scalability** — suitability for larger datasets and increasingly complex reasoning tasks
 
 **Reasoning depth** is additionally analyzed as a measure of inferential complexity.
-
-The published comparison specifically reports query coverage, explainability, and reasoning depth, while semantic expressiveness and scalability are considered as broader evaluation dimensions. :contentReference[oaicite:2]{index=2}
 
 ---
 
@@ -118,7 +116,7 @@ The benchmark is used to examine how the choice of representation affects:
 - semantic integration, and
 - support for multi-relational and contextual reasoning.
 
-The published comparison shows progressively broader query coverage across the representation paradigms, with Knowledge Graphs achieving coverage of all five benchmark queries. :contentReference[oaicite:3]{index=3}
+The published comparison shows progressively broader query coverage across the representation paradigms, with Knowledge Graphs achieving coverage of all five benchmark queries.
 
 ---
 
@@ -128,7 +126,7 @@ Knowledge Graphs represent clinical entities and relationships as interconnected
 
 The implementation described in the study uses RDF-based representation and SPARQL querying. The graph representation supports multi-hop reasoning, semantic integration, contextual reasoning, and path-based explanations.
 
-These capabilities are particularly relevant to queries requiring multiple interconnected relations across patients, clinical conditions, treatment guidelines, and related evidence. :contentReference[oaicite:4]{index=4}
+These capabilities are particularly relevant to queries requiring multiple interconnected relations across patients, clinical conditions, treatment guidelines, and related evidence.
 
 ---
 
@@ -136,4 +134,6 @@ These capabilities are particularly relevant to queries requiring multiple inter
 
 The framework is intended as a comparative research evaluation of knowledge-representation approaches for healthcare question answering.
 
-The findings should be interpreted within the scope of the benchmark, dataset, implementation choices, and limitations described in the published study. The evaluation does not constitute a clinical validation study or a deployment-ready clinical decision-support system.
+The findings should be interpreted within the scope of the benchmark, dataset, implementation choices, and limitations described in the published study.
+
+The evaluation does not constitute a clinical validation study or a deployment-ready clinical decision-support system.
